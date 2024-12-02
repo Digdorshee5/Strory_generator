@@ -21,7 +21,7 @@ function Chat_gpt() {
         setLoading(true);
 
         try {
-            const response = await axios.post('http://localhost:8080/api/generate-chat', { prompt });
+            const response = await axios.post('https://strory-generator.onrender.com/api/generate-chat', { prompt });
             if (response.data && response.data.story) {
                 const htmlStory = marked(response.data.story);
                 setStory(htmlStory);
